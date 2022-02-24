@@ -24,7 +24,7 @@ def page():
 
             Prediction = load_file.predict([[CRIM, ZN, CHAS, LSTAT]])
 
-            return render_template('results.html',Prediction=Prediction[0])
+            return render_template('results.html',Prediction=Prediction[0].round(2))
         except Exception as e:
             print('The Exception message is: ', e)
             return jsonify('error: Something is wrong')
